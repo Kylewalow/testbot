@@ -18,7 +18,9 @@ menuKeyboard.add(types.InlineKeyboardButton('Server status', callback_data='stat
 def send_welcome(message):
     sentMessage = bot.reply_to(message, "Ahoy")
 
-    if cid != sentMessage.chat.id:
+    print(str(cid) != str(sentMessage.chat.id))
+    print(sentMessage.chat.id)
+    if (str(cid) != str(sentMessage.chat.id)):
         bot.edit_message_text("Wrong chat for this command", sentMessage.chat.id, sentMessage.message_id)
         return
 
